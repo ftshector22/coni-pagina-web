@@ -86,29 +86,19 @@ const backgroundMusicConfig = {
 
 const giftOptions = [
   {
-    title: "Cena especial",
-    description: "Una cena preparada con mucho cariño, solo para nosotros dos.",
-    image: "images/WhatsApp Image 2026-06-30 at 14.17.43.jpeg"
+    title: "Portaventura",
+    description: "Un día entero para gritar en las atracciones, reírnos sin parar y volver con otro recuerdo enorme de los dos.",
+    image: "images/regalo1.jpg"
   },
   {
-    title: "Día sorpresa",
-    description: "Un plan completo pensado para ti, Coni, sin que tengas que preocuparte por nada.",
-    image: "images/WhatsApp Image 2026-06-30 at 14.18.10.jpeg"
+    title: "Tarjeta regalo en ropa",
+    description: "Una tarjeta para que elijas ropa a tu gusto, sin prisa y con permiso oficial para darte un capricho bonito.",
+    image: "images/regalo2.jpg"
   },
   {
-    title: "Regalo personalizado",
-    description: "Algo elegido especialmente para Constanza, con detalle y significado.",
-    image: "images/WhatsApp Image 2026-06-30 at 14.19.51.jpeg"
-  },
-  {
-    title: "Escapada juntos",
-    description: "Un pequeño viaje para desconectar y coleccionar otro recuerdo bonito.",
-    image: "images/WhatsApp Image 2026-06-30 at 14.21.44.jpeg"
-  },
-  {
-    title: "Plan que tú elijas",
-    description: "Tú decides el plan, yo me encargo de hacerlo especial para ti.",
-    image: "images/WhatsApp Image 2026-06-30 at 14.22.03.jpeg"
+    title: "Noche de cine VIP",
+    description: "Una noche de peli con palomitas, cena rica y todo preparado para que solo tengas que elegir qué vemos.",
+    image: "images/regalo3.jpg"
   }
 ];
 
@@ -241,20 +231,19 @@ function renderGiftOptions() {
   giftGrid.innerHTML = "";
 
   giftOptions.forEach((gift) => {
-    const article = createElement("article", "gift-card reveal");
+    const article = createElement("button", "gift-card reveal");
     const image = createElement("img");
     const body = createElement("div", "gift-card__body");
     const title = createElement("h3", "", gift.title);
-    const description = createElement("p", "", gift.description);
-    const button = createElement("button", "button button--primary", "Elegir este regalo");
 
+    article.type = "button";
+    article.setAttribute("aria-label", `Elegir ${gift.title}`);
     image.src = gift.image;
     image.alt = gift.title;
     image.loading = "lazy";
-    button.type = "button";
-    button.addEventListener("click", () => chooseGift(gift));
+    article.addEventListener("click", () => chooseGift(gift));
 
-    body.append(title, description, button);
+    body.appendChild(title);
     article.append(image, body);
     giftGrid.appendChild(article);
   });
@@ -370,18 +359,25 @@ function showGiftResult(gift) {
   giftGrid.hidden = true;
   giftResult.innerHTML = "";
 
-  const title = createElement("h3", "", "Has elegido tu regalo, Coni.");
-  const text = createElement(
+  const image = createElement("img", "gift-result__image");
+  const content = createElement("div", "gift-result__content");
+  const eyebrow = createElement("p", "gift-result__eyebrow", "Regalo elegido");
+  const title = createElement("h3", "", gift.title);
+  const text = createElement("p", "", gift.description);
+  const closing = createElement(
     "p",
-    "",
-    `Has elegido "${gift.title}". Ahora me toca a mí prepararlo para el 10 de agosto. Te quiero muchísimo, Constanza.`
+    "gift-result__closing",
+    "Solo puedes elegir un regalo, así que este queda guardado. Ahora me toca a mí prepararlo para ti."
   );
   const resetButton = createElement("button", "button button--light", "Volver a ver las opciones");
 
+  image.src = gift.image;
+  image.alt = gift.title;
   resetButton.type = "button";
   resetButton.addEventListener("click", resetGiftChoice);
 
-  giftResult.append(title, text, resetButton);
+  content.append(eyebrow, title, text, closing, resetButton);
+  giftResult.append(image, content);
 }
 
 function resetGiftChoice() {
@@ -397,7 +393,15 @@ function restoreGiftChoice() {
   if (!savedGift) return;
 
   try {
-    showGiftResult(JSON.parse(savedGift));
+    const parsedGift = JSON.parse(savedGift);
+    const currentGift = giftOptions.find((gift) => gift.title === parsedGift.title);
+
+    if (!currentGift) {
+      localStorage.removeItem(STORAGE_KEY);
+      return;
+    }
+
+    showGiftResult(currentGift);
   } catch {
     localStorage.removeItem(STORAGE_KEY);
   }

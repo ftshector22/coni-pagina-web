@@ -623,18 +623,24 @@ img {
 
 .gift-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 3vw, 28px);
 }
 
 .gift-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.88);
+  min-height: 440px;
+  padding: 0;
   border: 1px solid rgba(184, 68, 93, 0.13);
+  border-radius: var(--radius);
+  color: inherit;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.88);
   box-shadow: var(--soft-shadow);
+  cursor: pointer;
   transition: transform 280ms ease, box-shadow 280ms ease;
 }
 
@@ -643,18 +649,34 @@ img {
   box-shadow: var(--shadow);
 }
 
+.gift-card:focus-visible {
+  outline: 3px solid rgba(232, 199, 125, 0.8);
+  outline-offset: 4px;
+}
+
 .gift-card img {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 100%;
+  min-height: 340px;
+  flex: 1;
   object-fit: cover;
+  transition: transform 650ms ease, filter 650ms ease;
+}
+
+.gift-card:hover img {
+  transform: scale(1.04);
+  filter: saturate(1.08);
 }
 
 .gift-card__body {
-  flex: 1;
+  position: absolute;
+  inset: auto 0 0;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding: 18px;
+  justify-content: flex-end;
+  min-height: 42%;
+  padding: 28px;
+  background: linear-gradient(transparent, rgba(47, 32, 36, 0.88));
 }
 
 .gift-card p {
@@ -671,17 +693,49 @@ img {
   font-size: 0.9rem;
 }
 
+.gift-card h3 {
+  color: white;
+  font-size: clamp(2rem, 3vw, 3rem);
+  text-shadow: 0 12px 32px rgba(35, 16, 23, 0.48);
+}
+
 .gift-result {
   position: relative;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1fr);
+  gap: clamp(22px, 4vw, 42px);
+  align-items: stretch;
   margin-bottom: 28px;
   border-radius: var(--radius);
-  padding: clamp(26px, 6vw, 52px);
+  padding: clamp(18px, 3vw, 28px);
   color: white;
   background:
-    linear-gradient(135deg, rgba(110, 31, 53, 0.93), rgba(184, 68, 93, 0.86)),
-    url("images/regalo1.jpg") center / cover;
+    linear-gradient(135deg, rgba(110, 31, 53, 0.95), rgba(184, 68, 93, 0.88));
   box-shadow: var(--shadow);
+}
+
+.gift-result__image {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  border-radius: var(--radius);
+  object-fit: cover;
+  box-shadow: 0 24px 64px rgba(35, 16, 23, 0.26);
+}
+
+.gift-result__content {
+  align-self: center;
+  padding: clamp(8px, 3vw, 28px) clamp(6px, 2vw, 18px);
+}
+
+.gift-result__eyebrow {
+  margin: 0 0 12px;
+  color: var(--rose-100);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
 }
 
 .gift-result h3 {
@@ -695,6 +749,11 @@ img {
 .gift-result p {
   max-width: 680px;
   color: rgba(255, 255, 255, 0.88);
+}
+
+.gift-result__closing {
+  margin-top: 16px;
+  font-weight: 800;
 }
 
 .gift-result .button {
@@ -901,6 +960,18 @@ img {
   .love-grid,
   .gift-grid {
     grid-template-columns: 1fr;
+  }
+
+  .gift-card {
+    min-height: 360px;
+  }
+
+  .gift-result {
+    grid-template-columns: 1fr;
+  }
+
+  .gift-result__image {
+    min-height: 280px;
   }
 
   .love-card {
