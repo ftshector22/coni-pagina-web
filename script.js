@@ -86,19 +86,19 @@ const backgroundMusicConfig = {
 
 const giftOptions = [
   {
-    title: "Cena especial para dos",
-    description: "Una cena bonita para los dos, con sitio elegido con calma, postre incluido y presupuesto de unos 100 euros para que sea una noche de las que se recuerdan.",
-    image: "images/regalo-cena.jpg"
+    title: "Tarjeta Inditex 100 euros",
+    description: "Una tarjeta regalo de 100 euros para que elijas lo que quieras en Inditex: ropa, accesorios o ese capricho que te apetezca sin pensarlo demasiado.",
+    image: "images/regalo-inditex.png"
   },
   {
-    title: "Spa y masaje relax",
-    description: "Un plan de desconexion total: circuito de spa, masaje o tratamiento relajante y una tarde sin prisas, pensado para rondar los 100 euros.",
-    image: "images/regalo-spa.jpg"
+    title: "Perfume Miss Dior",
+    description: "El perfume Miss Dior, un regalo elegante, femenino y especial para que cada vez que lo uses te acuerdes de este cumple.",
+    image: "images/regalo-perfume.png"
   },
   {
-    title: "Taller creativo con merienda",
-    description: "Una experiencia diferente para hacer algo con las manos, pintar ceramica o crear algo bonito, y terminar con merienda rica. Valor aproximado: 100 euros.",
-    image: "images/regalo-taller.jpg"
+    title: "Noche en un hotel",
+    description: "Una noche en un hotel para desconectar, descansar y hacer un plan diferente juntos, con todo pensado para que sea una escapada bonita.",
+    image: "images/regalo-hotel.png"
   }
 ];
 
