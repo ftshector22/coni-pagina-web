@@ -1,4 +1,4 @@
-// Edita estos datos para personalizar la web de Constanza: textos, fotos, recuerdos y regalos.
+﻿// Edita estos datos para personalizar la web de Constanza: textos, fotos, recuerdos y regalos.
 // Las fotos nuevas de la carpeta images/ ya están usadas aquí. Puedes cambiar rutas o añadir más.
 const memories = [
   {
@@ -86,19 +86,19 @@ const backgroundMusicConfig = {
 
 const giftOptions = [
   {
-    title: "Portaventura",
-    description: "Un día entero para gritar en las atracciones, reírnos sin parar y volver con otro recuerdo enorme de los dos.",
-    image: "images/regalo1.jpg"
+    title: "Cena especial para dos",
+    description: "Una cena bonita para los dos, con sitio elegido con calma, postre incluido y presupuesto de unos 100 euros para que sea una noche de las que se recuerdan.",
+    image: "images/regalo-cena.jpg"
   },
   {
-    title: "Tarjeta regalo en ropa",
-    description: "Una tarjeta para que elijas ropa a tu gusto, sin prisa y con permiso oficial para darte un capricho bonito.",
-    image: "images/regalo2.jpg"
+    title: "Spa y masaje relax",
+    description: "Un plan de desconexion total: circuito de spa, masaje o tratamiento relajante y una tarde sin prisas, pensado para rondar los 100 euros.",
+    image: "images/regalo-spa.jpg"
   },
   {
-    title: "Noche de cine VIP",
-    description: "Una noche de peli con palomitas, cena rica y todo preparado para que solo tengas que elegir qué vemos.",
-    image: "images/regalo3.jpg"
+    title: "Taller creativo con merienda",
+    description: "Una experiencia diferente para hacer algo con las manos, pintar ceramica o crear algo bonito, y terminar con merienda rica. Valor aproximado: 100 euros.",
+    image: "images/regalo-taller.jpg"
   }
 ];
 
@@ -496,3 +496,4 @@ function init() {
 }
 
 init();
+
