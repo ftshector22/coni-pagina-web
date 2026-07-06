@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz cumpleaños, Constanza</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="intro" id="intro" aria-label="Intro del regalo">
+    <div class="intro__glow"></div>
+    <p class="intro__eyebrow">Coni, hay algo esperándote</p>
+    <h1 class="intro__title">Una pequeña parte de todo lo que significas para mí.</h1>
+    <button class="button button--light" id="openGiftButton" type="button">Abrir regalo</button>
+  </div>
+
+  <main class="page is-locked" id="page">
+    <section class="hero" id="hero">
+      <div class="hero__veil"></div>
+      <div class="hero__content reveal">
+        <p class="eyebrow">10 de agosto · Para Constanza</p>
+        <h1>Feliz cumpleaños, Coni</h1>
+        <p class="hero__subtitle">Hoy quería regalarte algo que no cupiera en una caja: un paseo por nosotros y por todo lo bonito que eres para mí.</p>
+        <button class="button button--primary" id="startButton" type="button">Empezar</button>
+      </div>
+      <div class="hero__scroll" aria-hidden="true"></div>
+    </section>
+
+    <section class="section welcome" id="welcome">
+      <div class="section__inner section__inner--narrow reveal">
+        <p class="eyebrow">Hecha solo para ti</p>
+        <h2>Esta página también es parte de tu regalo, Constanza.</h2>
+        <p>
+          La hice pensando en ti, Coni, en nuestra historia y en todas esas pequeñas cosas que convierten un día normal
+          en uno de mis favoritos. Ojalá al verla sientas un poquito de todo lo bonito que provocas en mí.
+        </p>
+      </div>
+    </section>
+
+    <section class="section timeline-section" id="moments">
+      <div class="section__inner">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Nuestros momentos</p>
+          <h2>Una línea del tiempo de recuerdos que guardo con cariño contigo.</h2>
+        </div>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+
+    <section class="section gallery-section" id="gallery">
+      <div class="section__inner">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Fotos que cuentan cosas</p>
+          <h2>Pedacitos de nosotros, Coni.</h2>
+        </div>
+        <div class="gallery" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <section class="section love-section" id="love">
+      <div class="section__inner">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Cosas que amo de ti</p>
+          <h2>Razones pequeñas, inmensas y muy tuyas.</h2>
+        </div>
+        <div class="love-grid" id="loveGrid"></div>
+      </div>
+    </section>
+
+    <section class="section interactive-section" id="interactive">
+      <div class="section__inner">
+        <div class="interactive-panel reveal">
+          <div>
+            <p class="eyebrow">Una carta al azar</p>
+            <h2>Elige una carta y deja que aparezca algo que siento por ti.</h2>
+          </div>
+          <div class="card-deck" id="cardDeck"></div>
+          <button class="button button--ghost" id="heartButton" type="button">Llenar esto de amor</button>
+          <div class="heart-stage" id="heartStage" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gifts-section" id="gifts">
+      <div class="section__inner">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Elige tu regalo</p>
+          <h2>Ahora viene la parte en la que tú decides, Constanza.</h2>
+        </div>
+        <div class="gift-result" id="giftResult" hidden></div>
+        <div class="gift-grid" id="giftGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Foto ampliada">
+    <button class="lightbox__close" id="closeLightbox" type="button" aria-label="Cerrar foto">×</button>
+    <img id="lightboxImage" src="" alt="">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
