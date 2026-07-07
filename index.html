@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Feliz cumpleaños, Constanza</title>
+  <title>Feliz cumpleaños, Coni</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -18,7 +18,11 @@
     <section class="hero" id="hero">
       <div class="hero__veil"></div>
       <div class="hero__content reveal">
-        <p class="eyebrow">10 de agosto · Para Constanza</p>
+        <div class="pelotuda-badge" aria-label="Detalle para mi pelotuda">
+          <span></span>
+          <strong>Para mi pelotuda favorita</strong>
+        </div>
+        <p class="eyebrow">10 de agosto · Para <span data-random-nickname>Coni</span></p>
         <h1>Feliz cumpleaños, Coni</h1>
         <p class="hero__subtitle">Hoy quería regalarte algo que no cupiera en una caja: un paseo por nosotros y por todo lo bonito que eres para mí.</p>
         <button class="button button--primary" id="startButton" type="button">Empezar</button>
@@ -29,21 +33,11 @@
     <section class="section welcome" id="welcome">
       <div class="section__inner section__inner--narrow reveal">
         <p class="eyebrow">Hecha solo para ti</p>
-        <h2>Esta página también es parte de tu regalo, Constanza.</h2>
+        <h2>Esta página también es parte de tu regalo, <span data-random-nickname>amor</span>.</h2>
         <p>
           La hice pensando en ti, Coni, en nuestra historia y en todas esas pequeñas cosas que convierten un día normal
-          en uno de mis favoritos. Ojalá al verla sientas un poquito de todo lo bonito que provocas en mí.
+          en uno de mis favoritos. Ojalá al verla sientas un poquito de todo lo bonito que provocas en mí, con un guiño de pelotuda preciosa solo para ti.
         </p>
-      </div>
-    </section>
-
-    <section class="section timeline-section" id="moments">
-      <div class="section__inner">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Nuestros momentos</p>
-          <h2>Una línea del tiempo de recuerdos que guardo con cariño contigo.</h2>
-        </div>
-        <div class="timeline" id="timeline"></div>
       </div>
     </section>
 
@@ -67,6 +61,16 @@
       </div>
     </section>
 
+    <section class="section playlist-section" id="playlist">
+      <div class="section__inner">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Playlist de nosotros</p>
+          <h2>Canciones que suenan a momentos contigo.</h2>
+        </div>
+        <div class="playlist-grid" id="playlistGrid"></div>
+      </div>
+    </section>
+
     <section class="section interactive-section" id="interactive">
       <div class="section__inner">
         <div class="interactive-panel reveal">
@@ -81,11 +85,32 @@
       </div>
     </section>
 
+    <section class="section plan-section" id="plans">
+      <div class="section__inner">
+        <div class="plan-panel reveal">
+          <div>
+            <p class="eyebrow">Ruleta de planes</p>
+            <h2>Deja que el azar elija nuestro próximo plan.</h2>
+          </div>
+          <div class="plan-wheel" id="planWheel" aria-hidden="true">
+            <span>Cena</span>
+            <span>Peli</span>
+            <span>Paseo</span>
+            <span>Helado</span>
+            <span>Comida</span>
+            <span>Mimos</span>
+          </div>
+          <button class="button button--primary" id="spinPlanButton" type="button">Girar ruleta</button>
+          <p class="plan-result" id="planResult" aria-live="polite">Pulsa y vemos qué nos toca.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="section gifts-section" id="gifts">
       <div class="section__inner">
         <div class="section-heading reveal">
           <p class="eyebrow">Elige tu regalo</p>
-          <h2>Ahora viene la parte en la que tú decides, Constanza.</h2>
+          <h2>Ahora viene la parte en la que tú decides, <span data-random-nickname>mariposita</span>.</h2>
         </div>
         <div class="gift-result" id="giftResult" hidden></div>
         <div class="gift-grid" id="giftGrid"></div>
@@ -97,6 +122,19 @@
     <button class="lightbox__close" id="closeLightbox" type="button" aria-label="Cerrar foto">×</button>
     <img id="lightboxImage" src="" alt="">
   </div>
+
+  <div class="gift-modal" id="giftModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="giftModalTitle">
+    <div class="gift-modal__panel">
+      <p class="gift-modal__eyebrow">Eleccion recibida</p>
+      <h2 id="giftModalTitle">Regalo enviado</h2>
+      <p id="giftModalText">Tu regalo se ha enviado correctamente.</p>
+      <button class="button button--primary" id="closeGiftModal" type="button">Cerrar</button>
+    </div>
+  </div>
+
+  <button class="ai-audio-button" id="aiAudioButton" type="button" aria-label="Reproducir audio IA">
+    Audio IA
+  </button>
 
   <script src="script.js"></script>
 </body>
