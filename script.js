@@ -214,9 +214,9 @@ const giftOptions = [
     image: "https://raw.githubusercontent.com/ftshector22/coni-pagina-web/main/images/gift-inditex.jpg"
   },
   {
-    title: "Perfume Miss Dior",
-    description: "El perfume Miss Dior, un regalo elegante, femenino y especial para que cada vez que lo uses te acuerdes de este cumple.",
-    image: "https://raw.githubusercontent.com/ftshector22/coni-pagina-web/main/images/gift-perfume.jpg"
+    title: "Entradas para un festival",
+    description: "Unas entradas para un festival o concierto que te apetezca, para vivir música, planazo y un recuerdo nuevo juntos.",
+    image: "https://raw.githubusercontent.com/ftshector22/coni-pagina-web/main/images/regalo-festival.png"
   },
   {
     title: "Noche en un hotel",
