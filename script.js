@@ -225,7 +225,7 @@ const giftOptions = [
   }
 ];
 
-const STORAGE_KEY = "birthdayGiftChoice";
+const STORAGE_KEY = "birthdayGiftChoiceFestival";
 const WEB3FORMS_ACCESS_KEY = "5c6dfbb2-46d4-4f04-84a0-b83a3760fbf7";
 const GIFT_NOTIFICATION_EMAIL = "ftshector22@gmail.com";
 
