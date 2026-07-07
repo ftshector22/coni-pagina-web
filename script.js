@@ -211,17 +211,17 @@ const giftOptions = [
   {
     title: "Tarjeta Inditex 100 euros",
     description: "Una tarjeta regalo de 100 euros para que elijas lo que quieras en Inditex: ropa, accesorios o ese capricho que te apetezca sin pensarlo demasiado.",
-    image: "images/gift-inditex.jpg"
+    image: "https://raw.githubusercontent.com/ftshector22/coni-pagina-web/main/images/gift-inditex.jpg"
   },
   {
     title: "Perfume Miss Dior",
     description: "El perfume Miss Dior, un regalo elegante, femenino y especial para que cada vez que lo uses te acuerdes de este cumple.",
-    image: "images/gift-perfume.jpg"
+    image: "https://raw.githubusercontent.com/ftshector22/coni-pagina-web/main/images/gift-perfume.jpg"
   },
   {
     title: "Noche en un hotel",
     description: "Una noche en un hotel para desconectar, descansar y hacer un plan diferente juntos, con todo pensado para que sea una escapada bonita.",
-    image: "images/gift-hotel.jpg"
+    image: "https://raw.githubusercontent.com/ftshector22/coni-pagina-web/main/images/gift-hotel.jpg"
   }
 ];
 
