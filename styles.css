@@ -1103,6 +1103,38 @@ img {
   animation: sparkle 1200ms ease-out forwards;
 }
 
+.final-letter-section {
+  background: linear-gradient(180deg, var(--rose-100), var(--cream));
+}
+
+.final-letter {
+  border-radius: var(--radius);
+  padding: clamp(30px, 7vw, 68px);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(255, 250, 241, 0.92)),
+    linear-gradient(45deg, rgba(184, 68, 93, 0.12), transparent);
+  border: 1px solid rgba(184, 68, 93, 0.16);
+  box-shadow: var(--shadow);
+}
+
+.final-letter .button {
+  margin-top: 28px;
+}
+
+.final-letter__content {
+  margin-top: 30px;
+  border-top: 1px solid rgba(184, 68, 93, 0.18);
+  padding-top: 26px;
+  text-align: left;
+}
+
+.final-letter__content p {
+  color: rgba(47, 32, 36, 0.78);
+  font-family: var(--serif);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  line-height: 1.65;
+}
+
 .lightbox {
   position: fixed;
   inset: 0;

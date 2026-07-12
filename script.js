@@ -256,6 +256,8 @@ const giftModal = document.querySelector("#giftModal");
 const giftModalText = document.querySelector("#giftModalText");
 const closeGiftModal = document.querySelector("#closeGiftModal");
 const aiAudioButton = document.querySelector("#aiAudioButton");
+const openFinalLetterButton = document.querySelector("#openFinalLetterButton");
+const finalLetterContent = document.querySelector("#finalLetterContent");
 const lightbox = document.querySelector("#lightbox");
 const lightboxImage = document.querySelector("#lightboxImage");
 const closeLightbox = document.querySelector("#closeLightbox");
@@ -533,6 +535,11 @@ function showTattooPreview(event) {
   tattooPreviewImage.src = tattooPreviewUrl;
   tattooPreview.hidden = false;
   sendTattooImageEmail(file);
+}
+
+function openFinalLetter() {
+  finalLetterContent.hidden = false;
+  openFinalLetterButton.hidden = true;
 }
 
 function renderInteractiveCards() {
@@ -995,6 +1002,7 @@ function setupEvents() {
 
   spinPlanButton.addEventListener("click", spinPlanWheel);
   tattooImageInput.addEventListener("change", showTattooPreview);
+  openFinalLetterButton.addEventListener("click", openFinalLetter);
   aiAudioButton.addEventListener("click", toggleAiAudio);
 }
 
