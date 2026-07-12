@@ -197,14 +197,18 @@ const aiAudioConfig = {
 };
 
 const planOptions = [
-  "Cena rica y sobremesa larga",
-  "Peli juntos, con derecho a comentar todo",
-  "Paseo sin prisa",
-  "Helado y charla",
-  "Comida que elija la pelotuda",
-  "Tarde de mimos",
-  "Plan sorpresa elegido por mí",
-  "Repetir un sitio que ya sea nuestro"
+  "Peli en casa con manta y palomitas",
+  "Paseo sin rumbo y foto bonita de recuerdo",
+  "Picnic barato con cosas del súper",
+  "Helado y charla en un banco",
+  "Noche de nuestra peli con cena improvisada",
+  "Ruta para encontrar el mejor croissant",
+  "Tarde de mimos y cero planes serios",
+  "Cocinar algo nuevo juntos",
+  "Atardecer con bebida fría y música",
+  "Hacer una lista de sitios a los que queremos ir",
+  "Recrear una de nuestras primeras citas",
+  "Plan de fotos tontas por la calle"
 ];
 
 const giftOptions = [
