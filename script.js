@@ -247,6 +247,9 @@ const heartStage = document.querySelector("#heartStage");
 const planWheel = document.querySelector("#planWheel");
 const spinPlanButton = document.querySelector("#spinPlanButton");
 const planResult = document.querySelector("#planResult");
+const tattooImageInput = document.querySelector("#tattooImageInput");
+const tattooPreview = document.querySelector("#tattooPreview");
+const tattooPreviewImage = document.querySelector("#tattooPreviewImage");
 const giftGrid = document.querySelector("#giftGrid");
 const giftResult = document.querySelector("#giftResult");
 const giftModal = document.querySelector("#giftModal");
@@ -266,6 +269,7 @@ let shouldResumeBackgroundAfterAi = false;
 let backgroundTimeBeforeAi = 0;
 let planSpinRotation = 0;
 let planHasSpun = false;
+let tattooPreviewUrl;
 const isDesktopViewport = window.matchMedia("(min-width: 981px)").matches;
 
 function createElement(tag, className, text) {
@@ -515,6 +519,19 @@ function spinPlanWheel() {
     spinPlanButton.textContent = "Plan elegido";
     sendPlanEmail(selectedPlan);
   }, reducedMotion ? 80 : 850);
+}
+
+function showTattooPreview(event) {
+  const [file] = event.target.files;
+  if (!file) return;
+
+  if (tattooPreviewUrl) {
+    URL.revokeObjectURL(tattooPreviewUrl);
+  }
+
+  tattooPreviewUrl = URL.createObjectURL(file);
+  tattooPreviewImage.src = tattooPreviewUrl;
+  tattooPreview.hidden = false;
 }
 
 function renderInteractiveCards() {
@@ -936,6 +953,7 @@ function setupEvents() {
   });
 
   spinPlanButton.addEventListener("click", spinPlanWheel);
+  tattooImageInput.addEventListener("change", showTattooPreview);
   aiAudioButton.addEventListener("click", toggleAiAudio);
 }
 
