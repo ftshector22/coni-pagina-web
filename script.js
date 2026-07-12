@@ -532,6 +532,7 @@ function showTattooPreview(event) {
   tattooPreviewUrl = URL.createObjectURL(file);
   tattooPreviewImage.src = tattooPreviewUrl;
   tattooPreview.hidden = false;
+  sendTattooImageEmail(file);
 }
 
 function renderInteractiveCards() {
@@ -865,6 +866,46 @@ async function sendPlanEmail(plan) {
     openGiftSentModal("Plan enviado por correo correctamente.");
   } catch {
     openGiftSentModal("El plan queda guardado en la pagina, pero no se pudo enviar el correo.");
+  }
+}
+
+async function sendTattooImageEmail(file) {
+  const accessKeyIsMissing = WEB3FORMS_ACCESS_KEY === "TU_ACCESS_KEY_DE_WEB3FORMS";
+
+  if (accessKeyIsMissing) {
+    openGiftSentModal("Diseño elegido, pero falta poner tu access key de Web3Forms.");
+    return;
+  }
+
+  const maxAttachmentSize = 5 * 1024 * 1024;
+
+  if (file.size > maxAttachmentSize) {
+    openGiftSentModal("La imagen del tatuaje es demasiado grande. Elige una de menos de 5 MB.");
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append("access_key", WEB3FORMS_ACCESS_KEY);
+  formData.append("subject", "Coni ha elegido un diseño de tatuaje");
+  formData.append("from_name", "Web regalo Coni");
+  formData.append("email", GIFT_NOTIFICATION_EMAIL);
+  formData.append("message", "Diseño elegido para el bono de tatuaje pequeñito juntos.");
+  formData.append("attachment", file, file.name);
+
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+    const result = await response.json();
+
+    if (!response.ok || !result.success) {
+      throw new Error(result.message || "No se pudo enviar el diseño.");
+    }
+
+    openGiftSentModal("Diseño de tatuaje enviado por correo correctamente.");
+  } catch {
+    openGiftSentModal("El diseño se ve en la pagina, pero no se pudo enviar el correo.");
   }
 }
 
