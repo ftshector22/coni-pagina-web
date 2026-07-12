@@ -111,8 +111,8 @@ const galleryImages = [
 ];
 
 const loveMessages = [
-  "{nickname}, me encanta tu forma de sonreír.",
-  "{nickname}, me haces sentir en casa.",
+  "{Nickname}, me encanta tu forma de sonreír.",
+  "{Nickname}, me haces sentir en casa.",
   "Contigo todo parece mejor.",
   "Gracias por estar en mi vida.",
   "Adoro cómo conviertes lo simple en especial.",
@@ -279,8 +279,14 @@ function getRandomNickname() {
   return randomNicknames[Math.floor(Math.random() * randomNicknames.length)];
 }
 
+function capitalizeFirstLetter(text) {
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
 function personalizeText(text) {
-  return text.replaceAll("{nickname}", getRandomNickname());
+  return text
+    .replaceAll("{Nickname}", () => capitalizeFirstLetter(getRandomNickname()))
+    .replaceAll("{nickname}", getRandomNickname());
 }
 
 function applyRandomNicknames() {
