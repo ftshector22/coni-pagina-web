@@ -283,6 +283,8 @@ const giftModal = document.querySelector("#giftModal");
 const giftModalText = document.querySelector("#giftModalText");
 const closeGiftModal = document.querySelector("#closeGiftModal");
 const aiAudioButton = document.querySelector("#aiAudioButton");
+const argentinaButton = document.querySelector("#argentinaButton");
+const argentinaToast = document.querySelector("#argentinaToast");
 const openFinalLetterButton = document.querySelector("#openFinalLetterButton");
 const finalLetterContent = document.querySelector("#finalLetterContent");
 const lightbox = document.querySelector("#lightbox");
@@ -299,6 +301,7 @@ let backgroundTimeBeforeAi = 0;
 let planSpinRotation = 0;
 let planHasSpun = false;
 let tattooPreviewUrl;
+let argentinaToastTimer;
 const quizAnswers = new Map();
 const isDesktopViewport = window.matchMedia("(min-width: 981px)").matches;
 
@@ -1001,6 +1004,22 @@ function closeGiftSentModal() {
   document.body.style.overflow = "";
 }
 
+function showArgentinaPenalty() {
+  argentinaToast.hidden = false;
+  argentinaToast.classList.add("is-visible");
+  clearTimeout(argentinaToastTimer);
+
+  argentinaToastTimer = setTimeout(() => {
+    argentinaToast.classList.remove("is-visible");
+
+    setTimeout(() => {
+      if (!argentinaToast.classList.contains("is-visible")) {
+        argentinaToast.hidden = true;
+      }
+    }, 240);
+  }, 2400);
+}
+
 function createFloatingHeart() {
   const heart = createElement("span", "floating-heart", "♥");
   heart.style.setProperty("--x", `${16 + Math.random() * 68}%`);
@@ -1075,6 +1094,7 @@ function setupEvents() {
   tattooImageInput.addEventListener("change", showTattooPreview);
   openFinalLetterButton.addEventListener("click", openFinalLetter);
   aiAudioButton.addEventListener("click", toggleAiAudio);
+  argentinaButton.addEventListener("click", showArgentinaPenalty);
 }
 
 function init() {
