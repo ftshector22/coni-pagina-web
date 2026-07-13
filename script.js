@@ -222,12 +222,12 @@ const quizQuestions = [
   {
     question: "¿Quién ama más al otro?",
     options: ["Héctor", "Coni", "Empate técnico, pero intenso"],
-    answer: "Empate técnico, pero intenso"
+    answer: "Héctor"
   },
   {
     question: "¿Quién es más infiel?",
     options: ["Héctor", "Coni", "Ninguno, ojito"],
-    answer: "Ninguno, ojito"
+    answer: "Coni"
   },
   {
     question: "¿Quién FUE MAS VECES A VER AL OTRO?",
