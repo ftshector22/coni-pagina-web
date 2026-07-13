@@ -220,29 +220,29 @@ const planOptions = [
 
 const quizQuestions = [
   {
-    question: "¿Qué día se volvió todavía más nuestra historia?",
-    options: ["22 de mayo", "10 de agosto", "Un martes random"],
-    answer: "22 de mayo"
+    question: "¿Cuál es el mejor plan de pareja cuando no queremos gastar mucho?",
+    options: ["Peli, manta y comida", "Ir a mirar coches caros", "Comprar una isla"],
+    answer: "Peli, manta y comida"
   },
   {
-    question: "¿Cuál es nuestro coche meme oficial?",
-    options: ["El Citroen C4", "Un Ferrari invisible", "Un patinete con complejo de coche"],
-    answer: "El Citroen C4"
+    question: "¿Qué vale más en una relación?",
+    options: ["Reírse juntos", "Tener siempre razón", "Elegir siempre la misma comida"],
+    answer: "Reírse juntos"
   },
   {
-    question: "¿Qué mote cariñoso y gracioso tenemos muy nuestro?",
-    options: ["Mariposita", "Señora presidenta", "Capitana croissant"],
-    answer: "Mariposita"
+    question: "¿Qué plan arregla casi cualquier día malo?",
+    options: ["Un abrazo largo", "Un Excel compartido", "Una reunión eterna"],
+    answer: "Un abrazo largo"
   },
   {
-    question: "¿Cuál es la canción de nuestra peli?",
-    options: ["Tormenta de Arena", "La Sacapuntas", "Remix Hesu"],
-    answer: "Tormenta de Arena"
+    question: "¿Qué es más importante en una cita?",
+    options: ["La compañía", "El sitio perfecto", "Que haya cobertura 5G"],
+    answer: "La compañía"
   },
   {
-    question: "¿Qué vale secreto puede aparecer si nos apetece una mini locura?",
-    options: ["Un tatuaje pequeñito juntos", "Comprar un C4 peor", "Abrir una tienda de sushi"],
-    answer: "Un tatuaje pequeñito juntos"
+    question: "¿Qué debería pasar si uno de los dos tiene antojo?",
+    options: ["Se negocia y seguramente se cae", "Se ignora con frialdad", "Se abre un juicio"],
+    answer: "Se negocia y seguramente se cae"
   }
 ];
 
