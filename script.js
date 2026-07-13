@@ -226,7 +226,7 @@ const quizQuestions = [
   },
   {
     question: "¿Quién es más infiel?",
-    options: ["Héctor", "Coni", "Ninguno, ojito"],
+    options: ["Héctor", "Coni", "Hesu"],
     answer: "Coni"
   },
   {
