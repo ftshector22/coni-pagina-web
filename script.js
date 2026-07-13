@@ -324,7 +324,7 @@ function personalizeText(text) {
 }
 
 function applyRandomNicknames() {
-  document.title = "Feliz cumpleaños, la boluda uuuda";
+  document.title = `Feliz cumpleaños, ${getRandomNickname()}`;
 
   document.querySelectorAll("[data-random-nickname]").forEach((element) => {
     element.textContent = getRandomNickname();
