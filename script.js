@@ -129,6 +129,13 @@ const interactiveCards = [
 
 const playlistSongs = [
   {
+    title: "Sparks",
+    artist: "Coldplay",
+    note: "Para esos momentos tranquilos en los que no hace falta decir mucho, porque estar contigo ya lo dice casi todo.",
+    src: "audio/Coldplay - Sparks [Ar48yzjn1PE].mp3",
+    theme: "sparks"
+  },
+  {
     title: "Remix Hesu",
     artist: "Hesu",
     note: "El remix especial para esta playlist, de esos que ya tienen sitio propio en la pagina.",
