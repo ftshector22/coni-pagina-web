@@ -220,29 +220,19 @@ const planOptions = [
 
 const quizQuestions = [
   {
-    question: "¿Cuál es el mejor plan de pareja cuando no queremos gastar mucho?",
-    options: ["Peli, manta y comida", "Ir a mirar coches caros", "Comprar una isla"],
-    answer: "Peli, manta y comida"
+    question: "¿Quién ama más al otro?",
+    options: ["Héctor", "Coni", "Empate técnico, pero intenso"],
+    answer: "Empate técnico, pero intenso"
   },
   {
-    question: "¿Qué vale más en una relación?",
-    options: ["Reírse juntos", "Tener siempre razón", "Elegir siempre la misma comida"],
-    answer: "Reírse juntos"
+    question: "¿Quién es más infiel?",
+    options: ["Héctor", "Coni", "Ninguno, ojito"],
+    answer: "Ninguno, ojito"
   },
   {
-    question: "¿Qué plan arregla casi cualquier día malo?",
-    options: ["Un abrazo largo", "Un Excel compartido", "Una reunión eterna"],
-    answer: "Un abrazo largo"
-  },
-  {
-    question: "¿Qué es más importante en una cita?",
-    options: ["La compañía", "El sitio perfecto", "Que haya cobertura 5G"],
-    answer: "La compañía"
-  },
-  {
-    question: "¿Qué debería pasar si uno de los dos tiene antojo?",
-    options: ["Se negocia y seguramente se cae", "Se ignora con frialdad", "Se abre un juicio"],
-    answer: "Se negocia y seguramente se cae"
+    question: "¿Quién FUE MAS VECES A VER AL OTRO?",
+    options: ["Héctor", "Coni", "La distancia, que se hacía la graciosa"],
+    answer: "Héctor"
   }
 ];
 
