@@ -136,13 +136,6 @@ const playlistSongs = [
     theme: "sparks"
   },
   {
-    title: "Remix Hesu",
-    artist: "Hesu",
-    note: "El remix especial para esta playlist, de esos que ya tienen sitio propio en la pagina.",
-    src: "audio/peaks/hesu.mpeg",
-    theme: "hesu"
-  },
-  {
     title: "Mi Corazon",
     artist: "Cano",
     note: "Nuestra cancion pendiente ya tiene nombre: esta es la que guardo como una de las nuestras.",
@@ -169,6 +162,13 @@ const playlistSongs = [
     note: "La cancion de nuestra peli, esa que ya tiene su propia escena guardada entre nosotros.",
     src: "audio/Dorian - Tormenta de Arena [PTcc1CmEnxw].mp3",
     theme: "movie"
+  },
+  {
+    title: "Remix Hesu",
+    artist: "Hesu",
+    note: "El remix especial para esta playlist, de esos que ya tienen sitio propio en la pagina.",
+    src: "audio/peaks/hesu.mpeg",
+    theme: "hesu"
   }
 ];
 
