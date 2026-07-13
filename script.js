@@ -218,6 +218,34 @@ const planOptions = [
   "Plan de fotos tontas por la calle"
 ];
 
+const quizQuestions = [
+  {
+    question: "¿Qué día se volvió todavía más nuestra historia?",
+    options: ["22 de mayo", "10 de agosto", "Un martes random"],
+    answer: "22 de mayo"
+  },
+  {
+    question: "¿Cuál es nuestro coche meme oficial?",
+    options: ["El Citroen C4", "Un Ferrari invisible", "Un patinete con complejo de coche"],
+    answer: "El Citroen C4"
+  },
+  {
+    question: "¿Qué mote cariñoso y gracioso tenemos muy nuestro?",
+    options: ["Mariposita", "Señora presidenta", "Capitana croissant"],
+    answer: "Mariposita"
+  },
+  {
+    question: "¿Cuál es la canción de nuestra peli?",
+    options: ["Tormenta de Arena", "La Sacapuntas", "Remix Hesu"],
+    answer: "Tormenta de Arena"
+  },
+  {
+    question: "¿Qué vale secreto puede aparecer si nos apetece una mini locura?",
+    options: ["Un tatuaje pequeñito juntos", "Comprar un C4 peor", "Abrir una tienda de sushi"],
+    answer: "Un tatuaje pequeñito juntos"
+  }
+];
+
 const giftOptions = [
   {
     title: "Tarjeta Inditex 100 euros",
@@ -251,6 +279,8 @@ const playlistGrid = document.querySelector("#playlistGrid");
 const cardDeck = document.querySelector("#cardDeck");
 const heartButton = document.querySelector("#heartButton");
 const heartStage = document.querySelector("#heartStage");
+const quizBox = document.querySelector("#quizBox");
+const quizResult = document.querySelector("#quizResult");
 const planWheel = document.querySelector("#planWheel");
 const spinPlanButton = document.querySelector("#spinPlanButton");
 const planResult = document.querySelector("#planResult");
@@ -279,6 +309,7 @@ let backgroundTimeBeforeAi = 0;
 let planSpinRotation = 0;
 let planHasSpun = false;
 let tattooPreviewUrl;
+const quizAnswers = new Map();
 const isDesktopViewport = window.matchMedia("(min-width: 981px)").matches;
 
 function createElement(tag, className, text) {
@@ -575,6 +606,49 @@ function renderInteractiveCards() {
 
     cardDeck.appendChild(button);
   });
+}
+
+function renderQuiz() {
+  quizBox.innerHTML = "";
+
+  quizQuestions.forEach((item, questionIndex) => {
+    const card = createElement("article", "quiz-card");
+    const title = createElement("h3", "", item.question);
+    const options = createElement("div", "quiz-card__options");
+
+    item.options.forEach((option) => {
+      const button = createElement("button", "quiz-card__option", option);
+      button.type = "button";
+      button.addEventListener("click", () => answerQuizQuestion(questionIndex, option, card));
+      options.appendChild(button);
+    });
+
+    card.append(title, options);
+    quizBox.appendChild(card);
+  });
+}
+
+function answerQuizQuestion(questionIndex, selectedOption, card) {
+  if (quizAnswers.has(questionIndex)) return;
+
+  const question = quizQuestions[questionIndex];
+  const isCorrect = selectedOption === question.answer;
+  quizAnswers.set(questionIndex, isCorrect);
+
+  card.classList.add(isCorrect ? "is-correct" : "is-wrong");
+  card.querySelectorAll(".quiz-card__option").forEach((button) => {
+    button.disabled = true;
+    if (button.textContent === question.answer) button.classList.add("is-answer");
+    if (button.textContent === selectedOption && !isCorrect) button.classList.add("is-selected-wrong");
+  });
+
+  if (quizAnswers.size === quizQuestions.length) {
+    const score = Array.from(quizAnswers.values()).filter(Boolean).length;
+    quizResult.textContent =
+      score === quizQuestions.length
+        ? "Perfecto. Esta pelotuda se sabe nuestra historia de memoria."
+        : `Has acertado ${score} de ${quizQuestions.length}. Aun así, aprobado por preciosa.`;
+  }
 }
 
 function renderGiftOptions() {
@@ -1022,6 +1096,7 @@ function init() {
   renderLoveMessages();
   renderPlaylist();
   renderInteractiveCards();
+  renderQuiz();
   renderGiftOptions();
   localStorage.removeItem(STORAGE_KEY);
   setupRevealAnimations();
